@@ -1,0 +1,12 @@
+version: '3'
+services:
+  rabbitmq_service:
+    restart: 'always'
+    build: .
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - ./data/:/var/lib/rabbitmq
+      - ./plugins/:/plugins
